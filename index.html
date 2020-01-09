@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+
+<head>
+    <title>Think Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body ng-controller="testController">
+    <div class="container">
+        <h1 class="text-center">Think Assignment</h1>
+        <br>
+        <form class="form-group text-center">
+            <button type="button" class="btn btn-primary" ng-click="getRequestSearch()">Add New User</button>
+        </form>
+    </div>
+    <br>
+    <div class="formTable container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in datas">
+                    <td>{{data.name.title + ' ' + data.name.first + ' ' + data.name.last}}</td>
+                    <td>{{data.dob.age}}</td>
+                    <td>{{data.gender}}</td>
+                    <td>{{data.location.city + ', ' + data.location.state + ', ' + data.location.country}}</td>
+                    <td>{{data.email}}</td>
+                    <td><img src="{{data.picture.medium}}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src=" app.js"></script>
+</body>
+
+</html>
